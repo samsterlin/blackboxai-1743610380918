@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation - Kuriyanvila Sree Bhadrakali Temple</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Razorpay Checkout -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading {
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-orange-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://images.pexels.com/photos/6147365/pexels-photo-6147365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Kuriyanvila Temple Logo" class="h-12 w-12 rounded-full object-cover">
+                    <h1 class="ml-3 text-2xl font-bold text-orange-800 heading">Kuriyanvila Sree Bhadrakali Temple</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-orange-800 hover:text-orange-600 font-medium">Home</a>
+                    <a href="index.html#about" class="text-orange-800 hover:text-orange-600 font-medium">About</a>
+                    <a href="index.html#events" class="text-orange-800 hover:text-orange-600 font-medium">Events</a>
+                    <a href="donation.html" class="text-orange-800 hover:text-orange-600 font-medium">Donate</a>
+                    <a href="index.html#contact" class="text-orange-800 hover:text-orange-600 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-orange-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Donation Section -->
+    <section class="pt-24 pb-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl font-bold text-center mb-8 text-orange-800 heading">Support Our Temple</h1>
+                <p class="text-center text-gray-600 mb-12">Your generous contribution helps us maintain the temple, conduct daily poojas, and organize festivals for the divine mother Bhadrakali.</p>
+                
+                <!-- Donation Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <form id="donationForm" class="space-y-6">
+                        <!-- Donation Amount -->
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Select Donation Amount (₹)</label>
+                            <div class="grid grid-cols-3 gap-4 mb-4">
+                                <button type="button" 
+                                        class="amount-btn py-3 px-4 border-2 border-orange-200 rounded-lg text-orange-800 hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                        data-amount="501">
+                                    ₹501
+                                </button>
+                                <button type="button" 
+                                        class="amount-btn py-3 px-4 border-2 border-orange-200 rounded-lg text-orange-800 hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                        data-amount="1001">
+                                    ₹1,001
+                                </button>
+                                <button type="button" 
+                                        class="amount-btn py-3 px-4 border-2 border-orange-200 rounded-lg text-orange-800 hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                        data-amount="2001">
+                                    ₹2,001
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">₹</span>
+                                <input type="number" 
+                                       id="customAmount"
+                                       class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                       placeholder="Enter custom amount">
+                            </div>
+                        </div>
+
+                        <!-- Personal Details -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                                <input type="text" 
+                                       id="name"
+                                       required
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                       placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email *</label>
+                                <input type="email" 
+                                       id="email"
+                                       required
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                       placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" 
+                                       id="phone"
+                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                       placeholder="Enter your phone number">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Purpose of Donation</label>
+                                <select id="purpose"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+                                    <option value="general">General Donation</option>
+                                    <option value="puja">Pooja Services</option>
+                                    <option value="festival">Festival Contribution</option>
+                                    <option value="annadanam">Annadanam</option>
+                                    <option value="maintenance">Temple Maintenance</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                                class="w-full bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition duration-300">
+                            Proceed to Donate
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="mt-12 bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold mb-4 text-orange-800">Important Information</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-orange-600 mt-1 mr-3"></i>
+                            <span>All donations are eligible for tax exemption under Section 80G</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-orange-600 mt-1 mr-3"></i>
+                            <span>You will receive a donation receipt on your registered email ID</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-orange-600 mt-1 mr-3"></i>
+                            <span>For any queries related to donation, please contact our temple office</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-orange-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kuriyanvila Sree Bhadrakali Temple</h3>
+                    <p class="text-orange-200">A sacred abode where divinity and devotion merge in eternal harmony.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-orange-200 hover:text-white">About Us</a></li>
+                        <li><a href="index.html#events" class="text-orange-200 hover:text-white">Events</a></li>
+                        <li><a href="donation.html" class="text-orange-200 hover:text-white">Donate</a></li>
+                        <li><a href="index.html#contact" class="text-orange-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Temple Hours</h3>
+                    <ul class="space-y-2 text-orange-200">
+                        <li>Monday - Friday: 3:30 AM - 8:30 PM</li>
+                        <li>Saturday: 3:30 AM - 8:30 PM</li>
+                        <li>Sunday: 3:30 AM - 8:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-orange-800 mt-8 pt-8 text-center text-orange-200">
+                <p>&copy; 2024 Kuriyanvila Sree Bhadrakali Temple. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Donation Form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle amount button selection
+            const amountButtons = document.querySelectorAll('.amount-btn');
+            const customAmountInput = document.getElementById('customAmount');
+            
+            amountButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    amountButtons.forEach(btn => {
+                        btn.classList.remove('bg-orange-100');
+                        btn.classList.remove('border-orange-500');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('bg-orange-100');
+                    this.classList.add('border-orange-500');
+                    
+                    // Set custom amount input to selected value
+                    customAmountInput.value = this.dataset.amount;
+                });
+            });
+
+            // Handle form submission
+            const form = document.getElementById('donationForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const amount = document.getElementById('customAmount').value;
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const purpose = document.getElementById('purpose').value;
+
+                // Validate required fields
+                if (!amount || !name || !email) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+
+                // Validate amount
+                if (amount < 1) {
+                    alert('Please enter a valid donation amount');
+                    return;
+                }
+
+                // Initialize Razorpay payment
+                const options = {
+                    key: 'rzp_live_0JfwyI7Nffyoxa', // Replace with your Razorpay key
+                    amount: amount * 100, // Amount in paise
+                    currency: 'INR',
+                    name: 'Kuriyanvila Sree Bhadrakali Temple',
+                    description: 'Temple Donation',
+                    image: 'https://images.pexels.com/photos/6147365/pexels-photo-6147365.jpeg',
+                    prefill: {
+                        name: name,
+                        email: email,
+                        contact: phone
+                    },
+                    notes: {
+                        purpose: purpose
+                    },
+                    handler: function(response) {
+                        // Handle successful payment
+                        alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                        // You would typically send this to your server to verify the payment
+                        window.location.href = 'donation-success.html';
+                    },
+                    modal: {
+                        ondismiss: function() {
+                            alert('Payment cancelled');
+                        }
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+                rzp.open();
+            });
+        });
+    </script>
+</body>
+</html>
