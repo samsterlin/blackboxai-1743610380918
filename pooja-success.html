@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Booking Successful - Kuriyanvila Sree Bhadrakali Temple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .heading { font-family: 'Raleway', sans-serif; }
+    </style>
+</head>
+<body class="bg-orange-50">
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://images.pexels.com/photos/6147365/pexels-photo-6147365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Kuriyanvila Temple Logo" class="h-12 w-12 rounded-full object-cover">
+                    <h1 class="ml-3 text-2xl font-bold text-orange-800 heading">Kuriyanvila Sree Bhadrakali Temple</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-orange-800 hover:text-orange-600 font-medium">Home</a>
+                    <a href="index.html#about" class="text-orange-800 hover:text-orange-600 font-medium">About</a>
+                    <a href="index.html#events" class="text-orange-800 hover:text-orange-600 font-medium">Events</a>
+                    <a href="poojas.html" class="text-orange-800 hover:text-orange-600 font-medium">Poojas</a>
+                    <a href="donation.html" class="text-orange-800 hover:text-orange-600 font-medium">Donate</a>
+                    <a href="index.html#contact" class="text-orange-800 hover:text-orange-600 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-orange-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="min-h-screen pt-24 pb-20 flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="mb-8">
+                        <div class="w-20 h-20 bg-green-100 rounded-full mx-auto flex items-center justify-center">
+                            <i class="fas fa-check-circle text-4xl text-green-500"></i>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold mb-4 text-orange-800 heading">Pooja Booking Confirmed!</h1>
+                    <p class="text-gray-600 mb-6">
+                        Your pooja booking at Kuriyanvila Sree Bhadrakali Temple has been successfully confirmed. May the divine mother's blessings be with you.
+                    </p>
+                    <div class="bg-orange-50 rounded-lg p-6 mb-8">
+                        <h3 class="text-lg font-semibold text-orange-800 mb-4">Booking Details</h3>
+                        <div id="bookingDetails" class="text-left space-y-3">
+                            <!-- Booking details will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-6 mb-8">
+                        <h3 class="text-lg font-semibold text-orange-800 mb-4">Important Information</h3>
+                        <ul class="text-left space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope text-orange-600 mt-1 mr-3"></i>
+                                <span>A confirmation email has been sent to your registered email address</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-orange-600 mt-1 mr-3"></i>
+                                <span>Please arrive 30 minutes before your scheduled pooja time</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-orange-600 mt-1 mr-3"></i>
+                                <span>Bring your booking reference number for verification</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="index.html" class="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-orange-700 transition duration-300">
+                            Return to Homepage
+                        </a>
+                        <p class="text-sm text-gray-500">
+                            If you have any questions, please contact our temple office
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-orange-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kuriyanvila Sree Bhadrakali Temple</h3>
+                    <p class="text-orange-200">A sacred abode where divinity and devotion merge in eternal harmony.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-orange-200 hover:text-white">About Us</a></li>
+                        <li><a href="index.html#events" class="text-orange-200 hover:text-white">Events</a></li>
+                        <li><a href="donation.html" class="text-orange-200 hover:text-white">Donate</a></li>
+                        <li><a href="index.html#contact" class="text-orange-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Temple Hours</h3>
+                    <ul class="space-y-2 text-orange-200">
+                        <li>Monday - Friday: 3:30 AM - 8:30 PM</li>
+                        <li>Saturday: 3:30 AM - 8:30 PM</li>
+                        <li>Sunday: 3:30 AM - 8:30 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-orange-800 mt-8 pt-8 text-center text-orange-200">
+                <p>&copy; 2024 Kuriyanvila Sree Bhadrakali Temple. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookingDetails = document.getElementById('bookingDetails');
+            
+            // Create booking details HTML
+            const detailsHTML = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-gray-600">Reference Number:</div>
+                    <div class="font-medium">${urlParams.get('reference') || 'N/A'}</div>
+                    
+                    <div class="text-gray-600">Pooja Date:</div>
+                    <div class="font-medium">${urlParams.get('date') || 'N/A'}</div>
+                    
+                    <div class="text-gray-600">Preferred Time:</div>
+                    <div class="font-medium">${urlParams.get('time') || 'N/A'}</div>
+                    
+                    <div class="text-gray-600">Amount Paid:</div>
+                    <div class="font-medium">₹${urlParams.get('amount') || 'N/A'}</div>
+                </div>
+            `;
+            
+            bookingDetails.innerHTML = detailsHTML;
+        });
+    </script>
+</body>
+</html>
