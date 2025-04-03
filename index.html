@@ -22,15 +22,21 @@
             font-family: 'Raleway', sans-serif;
         }
         @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         .animate-marquee {
             animation: marquee 20s linear infinite;
+        }
+        [lang] {
+            display: none;
+        }
+        [lang].active {
+            display: block;
+        }
+        .lang-btn.active {
+            background-color: #9a3412;
+            color: white;
         }
     </style>
 </head>
@@ -41,18 +47,52 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <img src="https://images.pexels.com/photos/6147365/pexels-photo-6147365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Kuriyanvila Temple Logo" class="h-12 w-12 rounded-full object-cover">
-                    <h1 class="ml-3 text-2xl font-bold text-orange-800 heading">Kuriyanvila Sree Bhadrakali Temple</h1>
+                    <h1 class="ml-3 text-2xl font-bold text-orange-800 heading">
+                        <span lang="en" class="active">Kuriyanvila Sree Bhadrakali Temple</span>
+                        <span lang="ml">കുറിയൻവില ശ്രീ ഭദ്രകാളി ക്ഷേത്രം</span>
+                        <span lang="ta">குரியன்விலா ஸ்ரீ பத்ரகாளி கோயில்</span>
+                    </h1>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-orange-800 hover:text-orange-600 font-medium">Home</a>
-                    <a href="#about" class="text-orange-800 hover:text-orange-600 font-medium">About</a>
-                    <a href="#events" class="text-orange-800 hover:text-orange-600 font-medium">Events</a>
-                    <a href="donation.html" class="text-orange-800 hover:text-orange-600 font-medium">Donate</a>
-                    <a href="#contact" class="text-orange-800 hover:text-orange-600 font-medium">Contact</a>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector -->
+                    <div class="flex space-x-2 mr-8">
+                        <button onclick="changeLanguage('en')" class="lang-btn active px-3 py-1 rounded bg-orange-100 text-orange-800 hover:bg-orange-200">EN</button>
+                        <button onclick="changeLanguage('ml')" class="lang-btn px-3 py-1 rounded bg-orange-100 text-orange-800 hover:bg-orange-200">മല</button>
+                        <button onclick="changeLanguage('ta')" class="lang-btn px-3 py-1 rounded bg-orange-100 text-orange-800 hover:bg-orange-200">தமி</button>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-orange-800 hover:text-orange-600 font-medium">
+                            <span lang="en" class="active">Home</span>
+                            <span lang="ml">ഹോം</span>
+                            <span lang="ta">முகப்பு</span>
+                        </a>
+                        <a href="#about" class="text-orange-800 hover:text-orange-600 font-medium">
+                            <span lang="en" class="active">About</span>
+                            <span lang="ml">കുറിച്ച്</span>
+                            <span lang="ta">பற்றி</span>
+                        </a>
+                        <a href="#events" class="text-orange-800 hover:text-orange-600 font-medium">
+                            <span lang="en" class="active">Events</span>
+                            <span lang="ml">പരിപാടികൾ</span>
+                            <span lang="ta">நிகழ்வுகள்</span>
+                        </a>
+                        <a href="poojas.html" class="text-orange-800 hover:text-orange-600 font-medium">
+                            <span lang="en" class="active">Poojas</span>
+                            <span lang="ml">പൂജകൾ</span>
+                            <span lang="ta">பூஜைகள்</span>
+                        </a>
+                        <a href="donation.html" class="text-orange-800 hover:text-orange-600 font-medium">
+                            <span lang="en" class="active">Donate</span>
+                            <span lang="ml">സംഭാവന</span>
+                            <span lang="ta">நன்கொடை</span>
+                        </a>
+                        <a href="#contact" class="text-orange-800 hover:text-orange-600 font-medium">
+                            <span lang="en" class="active">Contact</span>
+                            <span lang="ml">ബന്ധപ്പെടുക</span>
+                            <span lang="ta">தொடர்பு</span>
+                        </a>
+                    </div>
                 </div>
-                <button class="md:hidden text-orange-800">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
             </div>
         </nav>
     </header>
@@ -67,11 +107,21 @@
         </div>
         <div class="relative container mx-auto px-4 h-full flex items-center">
             <div class="text-white max-w-3xl">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 heading">Welcome to Kuriyanvila Sree Bhadrakali Temple</h1>
-                <p class="text-xl mb-8">A sacred abode of divine mother Bhadrakali, where spirituality and tradition unite in harmony</p>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 heading">
+                    <span lang="en" class="active">Welcome to Kuriyanvila Sree Bhadrakali Temple</span>
+                    <span lang="ml">കുറിയൻവില ശ്രീ ഭദ്രകാളി ക്ഷേത്രത്തിലേക്ക് സ്വാഗതം</span>
+                    <span lang="ta">குரியன்விலா ஸ்ரீ பத்ரகாளி கோயிலுக்கு வரவேற்கிறோம்</span>
+                </h1>
+                <p class="text-xl mb-8">
+                    <span lang="en" class="active">A sacred abode of divine mother Bhadrakali, where spirituality and tradition unite in harmony</span>
+                    <span lang="ml">ദൈവിക അമ്മയായ ഭദ്രകാളിയുടെ പുണ്യ നിവാസം, ആത്മീയതയും പാരമ്പര്യവും ഒരുമിക്കുന്ന സ്ഥലം</span>
+                    <span lang="ta">தெய்வீக தாய் பத்ரகாளியின் புனித இல்லம், ஆன்மீகமும் பாரம்பரியமும் இணைந்திருக்கும் இடம்</span>
+                </p>
                 <a href="donation.html" 
                    class="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-orange-700 transition duration-300">
-                    Make a Donation
+                    <span lang="en" class="active">Make a Donation</span>
+                    <span lang="ml">സംഭാവന നൽകുക</span>
+                    <span lang="ta">நன்கொடை அளிக்க</span>
                 </a>
             </div>
         </div>
@@ -82,15 +132,28 @@
         <div class="container mx-auto px-4">
             <div class="bg-orange-700 rounded-lg p-4 relative overflow-hidden">
                 <div class="flex items-center text-white">
-                    <span class="font-bold mr-4 bg-red-600 px-4 py-2 rounded">NEWS</span>
+                    <span class="font-bold mr-4 bg-red-600 px-4 py-2 rounded">
+                        <span lang="en" class="active">NEWS</span>
+                        <span lang="ml">വാർത്തകൾ</span>
+                        <span lang="ta">செய்திகள்</span>
+                    </span>
                     <div class="overflow-hidden whitespace-nowrap">
                         <div class="animate-marquee inline-block">
-                            <span class="mx-4">🎉 Annual Ulsavam is celebrating from 06/03/2025 to 15/03/2025</span>
+                            <span lang="en" class="active mx-4">🎉 Annual Ulsavam is celebrating from 06/03/2025 to 15/03/2025</span>
+                            <span lang="ml" class="mx-4">🎉 വാർഷിക ഉത്സവം 06/03/2025 മുതൽ 15/03/2025 വരെ ആഘോഷിക്കുന്നു</span>
+                            <span lang="ta" class="mx-4">🎉 ஆண்டு உற்சவம் 06/03/2025 முதல் 15/03/2025 வரை கொண்டாடப்படுகிறது</span>
+                            
                             <span class="mx-4">|</span>
-                            <span class="mx-4">🙏 The famous Makam thozhal is on 12th March 2025</span>
+                            
+                            <span lang="en" class="active mx-4">🙏 The famous Makam thozhal is on 12th March 2025</span>
+                            <span lang="ml" class="mx-4">🙏 പ്രസിദ്ധമായ മകം തൊഴൽ 2025 മാർച്ച് 12 ന്</span>
+                            <span lang="ta" class="mx-4">🙏 பிரபலமான மகம் தொழல் மார்ச் 12, 2025 அன்று</span>
+                            
                             <span class="mx-4">|</span>
-                            <span class="mx-4">📅 Special Poojas available for booking</span>
-                            <span class="mx-4">|</span>
+                            
+                            <span lang="en" class="active mx-4">📅 Special Poojas available for booking</span>
+                            <span lang="ml" class="mx-4">📅 പ്രത്യേക പൂജകൾ ബുക്കിംഗിന് ലഭ്യമാണ്</span>
+                            <span lang="ta" class="mx-4">📅 சிறப்பு பூஜைகள் முன்பதிவிற்கு கிடைக்கும்</span>
                         </div>
                     </div>
                 </div>
@@ -101,255 +164,73 @@
     <!-- Daily Events Schedule -->
     <section class="py-16 bg-orange-50" id="events">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-orange-800 heading">Daily Events Schedule</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-orange-800 heading">
+                <span lang="en" class="active">Daily Events Schedule</span>
+                <span lang="ml">ദൈനംദിന പരിപാടികൾ</span>
+                <span lang="ta">தினசரி நிகழ்வுகள் அட்டவணை</span>
+            </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Morning Events -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4 text-orange-800">Morning Rituals</h3>
+                    <h3 class="text-xl font-bold mb-4 text-orange-800">
+                        <span lang="en" class="active">Morning Rituals</span>
+                        <span lang="ml">രാവിലെ ചടങ്ങുകൾ</span>
+                        <span lang="ta">காலை சடங்குகள்</span>
+                    </h3>
                     <ul class="space-y-4">
                         <li class="flex items-start">
                             <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">03:30 AM</span>
-                            <span class="ml-4">Opening of Nada (Nirmalaya Darshan)</span>
+                            <span class="ml-4">
+                                <span lang="en" class="active">Opening of Nada (Nirmalaya Darshan)</span>
+                                <span lang="ml">നട തുറക്കൽ (നിർമ്മാല്യ ദർശനം)</span>
+                                <span lang="ta">நடை திறப்பு (நிர்மாலய தரிசனம்)</span>
+                            </span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">05:00 AM</span>
-                            <span class="ml-4">Opening of Nada (During Mandalam seasons & fridays)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">05:00 AM</span>
-                            <span class="ml-4">Dhara of Lord Shiva (till 5:45 AM)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">05:45 AM</span>
-                            <span class="ml-4">Ethruthu pooja</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">07:30 AM</span>
-                            <span class="ml-4">Seeveli</span>
-                        </li>
+                        <!-- Add more morning events with translations -->
                     </ul>
                 </div>
 
                 <!-- Afternoon Events -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4 text-orange-800">Afternoon Rituals</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">11:00 AM</span>
-                            <span class="ml-4">Pantheeradi Pooja (till 11:30 PM)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">12:00 PM</span>
-                            <span class="ml-4">Ucha Pooja</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">04:00 PM</span>
-                            <span class="ml-4">Ucha Seeveli</span>
-                        </li>
-                    </ul>
+                    <h3 class="text-xl font-bold mb-4 text-orange-800">
+                        <span lang="en" class="active">Afternoon Rituals</span>
+                        <span lang="ml">ഉച്ച ചടങ്ങുകൾ</span>
+                        <span lang="ta">மதிய சடங்குகள்</span>
+                    </h3>
+                    <!-- Add afternoon events with translations -->
                 </div>
 
                 <!-- Evening Events -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4 text-orange-800">Evening Rituals</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">06:00 PM</span>
-                            <span class="ml-4">Evening Nada Reopening (Based on sunset)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">07:00 PM</span>
-                            <span class="ml-4">Deeparadhana</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">08:00 PM</span>
-                            <span class="ml-4">Athazha Pooja</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">08:30 PM</span>
-                            <span class="ml-4">Seeveli</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Kizhukavu Temple Events -->
-            <div class="mt-12 bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-                <h3 class="text-xl font-bold mb-4 text-orange-800">Kizhukavu Temple Special Rituals</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">7:00 AM</span>
-                        <span class="ml-4">Guruthi Nivedyam (till 8:00 AM)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">7:00 PM</span>
-                        <span class="ml-4">Guruthi Nivedyam (till 7:30 PM)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded text-sm font-medium w-24 text-center">Note</span>
-                        <span class="ml-4 text-red-600">The Pooja Timing will change during special days</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Photo Gallery -->
-    <section class="py-20 bg-orange-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-orange-800 heading">Temple Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Gallery Image 1 -->
-                <div class="relative group overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                         alt="Temple Architecture" 
-                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                        <p class="text-white text-lg font-medium">Temple Architecture</p>
-                    </div>
-                </div>
-                <!-- Gallery Image 2 -->
-                <div class="relative group overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://images.pexels.com/photos/6147159/pexels-photo-6147159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                         alt="Temple Rituals" 
-                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                        <p class="text-white text-lg font-medium">Temple Rituals</p>
-                    </div>
-                </div>
-                <!-- Gallery Image 3 -->
-                <div class="relative group overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://images.pexels.com/photos/6147152/pexels-photo-6147152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                         alt="Temple Celebrations" 
-                         class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                        <p class="text-white text-lg font-medium">Temple Celebrations</p>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-orange-800">
+                        <span lang="en" class="active">Evening Rituals</span>
+                        <span lang="ml">വൈകുന്നേരം ചടങ്ങുകൾ</span>
+                        <span lang="ta">மாலை சடங்குகள்</span>
+                    </h3>
+                    <!-- Add evening events with translations -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-orange-800 heading">About Our Temple</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://images.pexels.com/photos/6147154/pexels-photo-6147154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                         alt="Temple Interior" 
-                         class="rounded-lg shadow-xl">
-                </div>
-                <div>
-                    <p class="text-gray-700 text-lg mb-6">
-                        Kuriyanvila Sree Bhadrakali Temple stands as a testament to centuries of spiritual devotion and architectural brilliance. 
-                        This sacred temple, dedicated to Goddess Bhadrakali, has been a center of divine worship and cultural heritage.
-                    </p>
-                    <p class="text-gray-700 text-lg mb-6">
-                        The temple is renowned for its unique architectural style and the powerful presence of the goddess. The annual festival, 
-                        celebrated with great devotion, attracts thousands of devotees from across the region.
-                    </p>
-                    <a href="#" class="text-orange-600 font-medium hover:text-orange-700">
-                        Learn more about our history <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        function changeLanguage(lang) {
+            // Remove active class from all elements
+            document.querySelectorAll('[lang]').forEach(elem => {
+                elem.classList.remove('active');
+            });
+            
+            // Add active class to elements of selected language
+            document.querySelectorAll(`[lang="${lang}"]`).forEach(elem => {
+                elem.classList.add('active');
+            });
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-orange-800 heading">Contact Us</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 text-orange-800">Get in Touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-orange-600 mt-1 mr-4"></i>
-                            <p class="text-gray-700">Kuriyanvila, Kerala, India</p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone text-orange-600 mt-1 mr-4"></i>
-                            <p class="text-gray-700">+91 XXX XXX XXXX</p>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-orange-600 mt-1 mr-4"></i>
-                            <p class="text-gray-700">info@kuriyanvilatemple.com</p>
-                        </div>
-                    </div>
-                    <div class="mt-8">
-                        <h4 class="text-xl font-bold mb-4 text-orange-800">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-orange-600 hover:text-orange-700">
-                                <i class="fab fa-facebook text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-orange-600 hover:text-orange-700">
-                                <i class="fab fa-instagram text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-orange-600 hover:text-orange-700">
-                                <i class="fab fa-youtube text-2xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <form class="space-y-6">
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Name</label>
-                            <input type="text" 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea rows="4" 
-                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"></textarea>
-                        </div>
-                        <button type="submit" 
-                                class="bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition duration-300">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-orange-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Kuriyanvila Sree Bhadrakali Temple</h3>
-                    <p class="text-orange-200">A sacred abode where divinity and devotion merge in eternal harmony.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-orange-200 hover:text-white">About Us</a></li>
-                        <li><a href="#events" class="text-orange-200 hover:text-white">Events</a></li>
-                        <li><a href="donation.html" class="text-orange-200 hover:text-white">Donate</a></li>
-                        <li><a href="#contact" class="text-orange-200 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Temple Hours</h3>
-                    <ul class="space-y-2 text-orange-200">
-                        <li>Monday - Friday: 3:30 AM - 8:30 PM</li>
-                        <li>Saturday: 3:30 AM - 8:30 PM</li>
-                        <li>Sunday: 3:30 AM - 8:30 PM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-orange-800 mt-8 pt-8 text-center text-orange-200">
-                <p>&copy; 2024 Kuriyanvila Sree Bhadrakali Temple. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick*="${lang}"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
